@@ -10,18 +10,18 @@ export class HomePage {
   state = 'number';
   memory: number;
   operator: string;
-  display: String = '0';
+  display: number = 0;
 
   public clickNumber(num: number) {
     if(this.state === 'number') {
       this.primerNum *= 10;
       this.primerNum += num;
-      this.display = this.primerNum.toString();
+      this.display = this.primerNum;
     }
 
     if(this.state === 'operator') {
       this.primerNum = num;
-      this.display = this.primerNum.toString();
+      this.display = this.primerNum;
       this.state = 'number';
     }
   }
@@ -48,19 +48,31 @@ export class HomePage {
         break;
         case '%':
           this.primerNum = this.memory % this.primerNum;
-        break;
+        break;      
+        default:
       }
-      this.display = this.primerNum.toString();
+      this.memory = this.display;
+      this.display = this.primerNum;
     }
 
-    public clickBorrar() {
-      this.primerNum = 0;
-      this.display = "0";
+    public clickBorrar(borrar: string) {
+      this.state = 'operator';
+      this.operator = borrar;
+      if(this.operator === 'AC'){
+        this.primerNum = 0;
+        this.memory = 0;
+        this.display = 0;
+      }
+      if(this.operator === 'C'){
+        this.primerNum -= this.display;
+        this.memory = this.memory;
+        this.display = 0;       
+      }      
     }
 
     public cambiarSigno() {
       this.primerNum *= -1;
-      this.display = this.primerNum.toString();
+      this.display = this.primerNum;
     }
 
     public clickPunto() {
