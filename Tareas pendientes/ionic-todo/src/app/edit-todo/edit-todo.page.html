@@ -14,14 +14,22 @@
     <ion-input clearInput [(ngModel)]="todo.title"></ion-input>
   </ion-item>
   <ion-item>
-      <ion-label position="floating">Descripción</ion-label>
-      <ion-input clearInput [(ngModel)]="todo.description"></ion-input>
-    </ion-item>
+    <ion-label position="floating">Descripción</ion-label>
+    <ion-input clearInput [(ngModel)]="todo.description"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label>Prioridad</ion-label>
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Escoge una">
+      <ion-select-option clearInput [(ngModel)]="todo.priority" value="Alta">Alta</ion-select-option>
+      <ion-select-option clearInput [(ngModel)]="todo.priority" value="Media">Media</ion-select-option>
+      <ion-select-option clearInput [(ngModel)]="todo.dpriority" value="Baja">Baja</ion-select-option>
+    </ion-select>
+  </ion-item>
 
-    <hr><hr><hr>
+  <hr>
+  <hr>
+  <hr>
 
-    <ion-button
-    (click)="saveTodo(todo)"
-    color="light"
-    expand="full">Guardar</ion-button>
+  <ion-button (click)="saveTodo(todo)" color="light" expand="full">Guardar</ion-button>
 </ion-content>

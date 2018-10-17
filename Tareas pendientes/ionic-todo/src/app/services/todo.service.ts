@@ -8,14 +8,14 @@ import { Storage } from '@ionic/storage';
 export class TodoService {
 
   todos: Todo[] = [];
-  todoCounter = 1;
+  todoCounter = 0;
 
   constructor(private storage: Storage) {
   }
 
   getTodos(): Promise<Todo[]> {
     this.storage.get('todoCounter').then(
-      data => this.todoCounter
+      data => this.todoCounter = data
     );
     return this.storage.get('todos').then(
       data => {

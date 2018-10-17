@@ -11,12 +11,14 @@ import { AlertController, NavController } from '@ionic/angular';
 export class HomePage implements OnInit {
 
   todos: Todo[] = [];
-
+  myIcon: String;
+  iconNames: Array<String> = ['star-outline', 'star'];
   constructor(
     private alertController: AlertController,
     private todoService: TodoService,
     private navController: NavController
-  ) { }
+  ) { this.myIcon = this.iconNames[Math.floor(Math.random() *
+    this.iconNames.length)]; }
 
   ngOnInit() { }
 
@@ -24,6 +26,12 @@ export class HomePage implements OnInit {
     this.todoService.getTodos().then(
       data => this.todos = data
     );
+  }
+
+  private like = false;
+
+  setStar(h: boolean) {
+    this.like = h;
   }
 
   async deleteDialog(title: String, id: number) {

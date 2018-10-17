@@ -19,7 +19,8 @@ export class EditTodoPage implements OnInit {
     this.todo = {
       id: this.todoService.todoCounter,
       title: "",
-      description: ""
+      description: "",
+      priority: []
     };
   }
 
