@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-grid class="contenedor">
     <ion-row>
-      <ion-col class="celda" size="2"><ion-icon name="logo-octocat" class="icon"></ion-icon></ion-col>
+      <ion-col class="celda" size="2" *ngIf="posicion==0"><ion-icon name="logo-octocat" class="icon" (click)="movimiento()"></ion-icon></ion-col>
       <ion-col class="celda" size="2"></ion-col>
       <ion-col class="celda" size="2"></ion-col>
       <ion-col class="celda" size="2"></ion-col>
@@ -19,15 +19,7 @@
     </ion-row>
     <ion-row>
       <ion-col class="celda" size="2"></ion-col>
-      <ion-col class="celda" size="2"></ion-col>
-      <ion-col class="celda" size="2"></ion-col>
-      <ion-col class="celda" size="2"></ion-col>
-      <ion-col class="celda" size="2"></ion-col>
-      <ion-col class="celda" size="2"></ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="celda" size="2"></ion-col>
-      <ion-col class="celda" size="2"></ion-col>
+      <ion-col class="celda" size="2" *ngIf="posicion==1"><ion-icon name="logo-octocat" class="icon" (click)="movimiento()"></ion-icon></ion-col>
       <ion-col class="celda" size="2"></ion-col>
       <ion-col class="celda" size="2"></ion-col>
       <ion-col class="celda" size="2"></ion-col>
@@ -36,7 +28,7 @@
     <ion-row>
       <ion-col class="celda" size="2"></ion-col>
       <ion-col class="celda" size="2"></ion-col>
-      <ion-col class="celda" size="2"></ion-col>
+      <ion-col class="celda" size="2" *ngIf="posicion==2"><ion-icon name="logo-octocat" class="icon" (click)="movimiento()"></ion-icon></ion-col>
       <ion-col class="celda" size="2"></ion-col>
       <ion-col class="celda" size="2"></ion-col>
       <ion-col class="celda" size="2"></ion-col>
@@ -45,9 +37,27 @@
       <ion-col class="celda" size="2"></ion-col>
       <ion-col class="celda" size="2"></ion-col>
       <ion-col class="celda" size="2"></ion-col>
+      <ion-col class="celda" size="2" *ngIf="posicion==3"><ion-icon name="logo-octocat" class="icon" (click)="movimiento()"></ion-icon></ion-col>
       <ion-col class="celda" size="2"></ion-col>
       <ion-col class="celda" size="2"></ion-col>
-      <ion-col class="celda" size="2"><ion-icon name="md-exit"></ion-icon></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="celda" size="2"></ion-col>
+      <ion-col class="celda" size="2"></ion-col>
+      <ion-col class="celda" size="2"></ion-col>
+      <ion-col class="celda" size="2"></ion-col>
+      <ion-col class="celda" size="2" *ngIf="posicion==4"><ion-icon class="icon" name="logo-octocat"(click)="movimiento()"></ion-icon></ion-col>
+      <ion-col class="celda" size="2"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="celda" size="2"></ion-col>
+      <ion-col class="celda" size="2"></ion-col>
+      <ion-col class="celda" size="2"></ion-col>
+      <ion-col class="celda" size="2"></ion-col>
+      <ion-col class="celda" size="2"></ion-col>
+      <ion-col class="celda" size="2"><ion-icon class="icon" name="md-exit"></ion-icon></ion-col>
     </ion-row>
   </ion-grid>
+  <br> <br> <br>
+  <h2 class="texto" *ngIf="posicion==5"> El pulpogato se ha marchado</h2>
 </ion-content>
