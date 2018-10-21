@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ejercicio 1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-button (click)="muestraNombre()" color="primary" expand="full">MOSTRAR NOMBRE</ion-button>
+  <ion-button (click)="limpiaNombre()" color="primary" expand="full">LIMPIAR PANTALLA</ion-button>
+  <h1 class="display">{{nombre}}</h1>
+</ion-content>
