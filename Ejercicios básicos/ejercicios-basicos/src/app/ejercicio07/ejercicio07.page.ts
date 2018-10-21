@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Ejercicio07Page implements OnInit {
 
+  pesetas: number;
+  euros: number;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  convertidorPesetas(){
+    this.euros = this.pesetas / 166.39;
+  }
+
+  convertidorEuros(){
+    this.pesetas = this.euros * 166.39;
+  }
 }
