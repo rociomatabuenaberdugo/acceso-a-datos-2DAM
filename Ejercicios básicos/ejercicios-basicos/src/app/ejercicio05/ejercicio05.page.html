@@ -10,12 +10,12 @@
 <ion-content padding>
   <ion-item>
     <ion-label position="floating">Primer valor</ion-label>
-    <ion-input clearInput [(ngModel)]="numMin" value="0"></ion-input>
+    <ion-input type="number" placeholder="0" value="0"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Segundo valor</ion-label>
-    <ion-input clearInput [(ngModel)]="numMax" value="0"></ion-input>
+    <ion-input type="number" placeholder="0" value="0"></ion-input>
   </ion-item>
-  <ion-button (click)="generar(numMin, numMax)" expand="full" size="large">Generar número</ion-button>
+  <ion-button (click)="generar(numUno, numDos)" expand="full" size="large">Generar número</ion-button>
   <h1 class="display">{{display}}</h1>
 </ion-content>

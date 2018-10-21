@@ -29,7 +29,7 @@ export class Ejercicio05Page implements OnInit {
       this.numMin = a;
       this.numMax = b;
     }
-    return this.display = Math.floor(Math.random()*this.numMax)+this.numMin+1;
+    return this.display = Math.floor(Math.random()*this.numMax+this.numMin);
   }
 
 }
