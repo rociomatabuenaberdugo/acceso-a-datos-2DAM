@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      <ion-searchbar placeholder="Introduce un subreddit"></ion-searchbar>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-buttons (click)="openSettings()">
+        <ion-icon slot="icon-only" name="settings"></ion-icon>
+      </ion-buttons>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="none">
+    <div tappable>
+      <ion-item lines="none">
+        AQUÍ VA EL GIF
+      </ion-item>
+      <ion-list-header>
+        <ion-label>
+          AQUÍ VA EL TÍTULO
+        </ion-label>
+      </ion-list-header>
+    </div>
+    <div text-center *ngIf="redditService.loading">
+      <ion-spinner name="crescent" lines="none"></ion-spinner>
+    </div>
+  </ion-list>
+
+  <ion-button expand="full" color="light" (click)="loadMore()">
+    Cargar más...
+  </ion-button>
+
+</ion-content>
